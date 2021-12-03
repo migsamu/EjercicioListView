@@ -3,4 +3,5 @@
     <string name="tvTitulo">Selecciona un sistema operativo:</string>
     <string name="enviar">Enviar</string>
     <string name="tvDatos">El sistema seleccionado es: </string>
+    <string name="volver">Volver</string>
 </resources>
