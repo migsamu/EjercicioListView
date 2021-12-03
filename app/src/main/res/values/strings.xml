@@ -2,4 +2,5 @@
     <string name="app_name">Sistemas operativos</string>
     <string name="tvTitulo">Selecciona un sistema operativo:</string>
     <string name="enviar">Enviar</string>
+    <string name="tvDatos">El sistema seleccionado es: </string>
 </resources>

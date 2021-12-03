@@ -2,6 +2,7 @@ package org.iesfm.ejerciciolistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rbOpc3;
 
     private String seleccion;
+
+    protected static final String SISTEMA_OPERATIVO = "org.iesfm.ejerciciolistview.sistemaOperativo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +85,54 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
-
             }
         });
+    }
+
+    public void sendInfo(View v) {
+        Intent datos = new Intent(this, Datos.class);
+
+        if (seleccion.equals("Windows")) {
+            switch (rgSistemasOperativos.getCheckedRadioButtonId()) {
+                case R.id.rbOpcion1:
+                    seleccion += " 7";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+                case R.id.rbOpcion2:
+                    seleccion += " 10";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+                case R.id.rbOpcion3:
+                    seleccion += " 11";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+            }
+        } else if (seleccion.equals("Linux")) {
+            switch (rgSistemasOperativos.getCheckedRadioButtonId()) {
+                case R.id.rbOpcion1:
+                    seleccion += "-Ubuntu";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+                case R.id.rbOpcion2:
+                    seleccion += "-Debian";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+                case R.id.rbOpcion3:
+                    seleccion += "-Otro";
+                    datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+                    startActivity(datos);
+                    break;
+            }
+        }else if (seleccion.equals("IOS")) {
+            datos.putExtra(SISTEMA_OPERATIVO, seleccion);
+            startActivity(datos);
+        }
+
 
     }
 
