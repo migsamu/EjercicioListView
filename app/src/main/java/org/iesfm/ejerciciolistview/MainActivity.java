@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (seleccion.equals("IOS")) {
             datos.putExtra(SISTEMA_OPERATIVO, seleccion);
             startActivity(datos);
-        } else if (seleccion.equals("IOS")) {
+        } else if (seleccion.equals("Otro")) {
             datos.putExtra(SISTEMA_OPERATIVO, seleccion);
             startActivity(datos);
         }
